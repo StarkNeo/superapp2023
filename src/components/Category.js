@@ -48,6 +48,7 @@ export function Category(props) {
                                 <th colSpan={2}>Subtotal</th>
                             </tr>
                         </thead>
+                        
                         {props.items.map((e, index) => {
                             let arrayItems = [];
                             if (e.category === cat) {
@@ -57,6 +58,8 @@ export function Category(props) {
                             
                             return <Products key={index} items={arrayItems} delete={props.delete} />
                         })}
+                        
+                        
                     </table>
 
 

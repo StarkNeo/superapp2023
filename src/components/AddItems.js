@@ -35,6 +35,8 @@ export function Item(props) {
 
     }
 
+    
+
     const handleSubmit = (event) => {
         event.preventDefault()
         let item = {
@@ -54,7 +56,7 @@ export function Item(props) {
         setId(lastId => lastId + 1);
     }
 
-
+    
     return (
         <>
 

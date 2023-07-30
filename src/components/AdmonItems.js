@@ -29,11 +29,10 @@ export function AdminItems() {
 
     const loadList =()=>{
         return localStorage.list? setItems(JSON.parse(localStorage.getItem('list'))):''
-       // let list = JSON.parse(localStorage.getItem('list'))
-        //setItems(list)
+       
     }
-    console.log(items)
 
+    
 
     return (
         <>
