@@ -6,28 +6,50 @@ import { Summarize } from "./Summary";
 
 export function AdminItems() {
     const [items, setItems] = useState([]);
-    
+
+
     const addItem = (item) => {
         setItems(() => [item, ...items])
+
     };
 
     const deleteItem = (id) => {
         let newArray = items.filter(element => element.id != id);
         setItems(newArray);
     }
+
+    const saveList =()=>{
+        
+        localStorage.setItem("list",JSON.stringify(items));
+    }
+    const deleteList =()=>{
+        localStorage.clear("list");
+        setItems([]);
+    }
+
+    const loadList =()=>{
+        return localStorage.list? setItems(JSON.parse(localStorage.getItem('list'))):''
+       // let list = JSON.parse(localStorage.getItem('list'))
+        //setItems(list)
+    }
     console.log(items)
+
+
     return (
         <>
-            <h1 className="title">SUPERAPP 2023</h1>
+
             <div id="headApp">
-            <Item addItem={addItem} />
-            <Summarize values={items} />
-            
+                <h1 className="app-title">SUPERAPP 2023</h1>
+                <Item addItem={addItem} />
+                <Summarize values={items} save={saveList} delete={deleteList} load={loadList}/>
+
             </div>
-            
-            <Category items={items} delete={deleteItem} />
-            
-            
+            <div id="body">
+                <Category items={items} delete={deleteItem} />
+
+            </div>
+
+
 
         </>
 

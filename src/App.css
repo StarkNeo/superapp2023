@@ -1,16 +1,33 @@
-#headApp{
-  display: flex;
-  justify-content: center;
+#headApp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1f 1fr 1fr;
+  /*justify-content: center;
   /*border: 1px solid black;*/
   width: 50%;
-  margin: auto;
   box-shadow: inset 0 0 10px #282c34;
+  position: fixed;
+  margin-left: 25%;
+  top: 10px;
+  background-color: #c3e6e5;
 }
 
-.title{
-  text-align: center;
+.app-title{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
 }
-form{
+#body {
+  margin-top: 22%;
+
+}
+
+.title {
+  text-align: center;
+
+}
+
+form {
   width: 50%;
   margin: auto;
   /*border: 1px solid black;*/
@@ -18,54 +35,64 @@ form{
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 1rem;
-  
+
 }
-input[type="submit"]{
+
+input[type="submit"] {
   margin-top: 0.5rem;
 }
 
-#summarize{
+#summarize {
   width: 50%;
   text-align: center;
 }
-#summarize input{
+
+#summarize input {
   text-align: center;
 }
 
 
-.input{
+.input {
   width: 100%;
   display: flex;
   flex-direction: column;
 
   border: 1px solid black;
 }
-.input label{
+
+.input label {
   width: 100%;
   text-align: center;
   background-color: #282c34;
   color: white;
-  
+
 }
-input{
+
+input {
   text-transform: uppercase;
 }
-table{
+
+table {
   font-family: Arial, Helvetica, sans-serif;
   color: #111111;
   border: 1px solid black;
   width: 50%;
-  margin:1rem auto;
+  max-width: 50%;
+  margin: 1rem auto;
   border-radius: 10px;
-  
+
+
 }
-th,td{
+
+th,
+td {
   padding: 7px 10px 10px 10px;
   text-align: center;
   text-transform: uppercase;
-  
+
 }
-th{
+
+th {
   letter-spacing: 0.1em;
   font-size: 90%;
   /*border-bottom: 2px solid #111111;*/
@@ -73,52 +100,18 @@ th{
   text-align: center;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
   background-color: #efefef;
 }
 
-tr:hover{
+tr:hover {
   background-color: #c3e6e5;
 }
 
-.money{
+.money {
   text-align: right;
 }
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

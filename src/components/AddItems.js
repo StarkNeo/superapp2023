@@ -15,19 +15,19 @@ export function Item(props) {
     const changeValue = ({ target }) => {
         switch (target.id) {
             case 'category':
-                setCategory(target.value)
+                setCategory(target.value.toUpperCase())
                 break;
             case 'name':
-                setName(target.value);
+                setName(target.value.toUpperCase());
                 break;
             case 'price':
-                setPrice(target.value);
+                setPrice(target.value.toUpperCase());
                 break;
             case 'unit':
-                setUnit(target.value);
+                setUnit(target.value.toUpperCase());
                 break;
             case 'quantity':
-                setQuantity(target.value);
+                setQuantity(target.value.toUpperCase());
                 break;
             default:
                 break;

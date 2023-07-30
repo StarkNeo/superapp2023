@@ -18,6 +18,12 @@ export function Summarize(props) {
         <h2>SUMMARY</h2>
         <label>TOTAL $: </label> 
         <input value={total} disabled/>
+        <fieldset>
+        <h5>List Actions</h5>
+        <input type="button" value="Save List" onClick={props.save} />
+        <input type="button" value="Remove List" onClick={props.delete} />
+        <input type="button" value="My list" onClick={props.load} />
+        </fieldset>
         </div>
             
         
