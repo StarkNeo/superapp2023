@@ -18,6 +18,27 @@ export function AdminItems() {
         setItems(newArray);
     }
 
+    const checkItem =(id)=>{
+        let newArray = items.map((element)=>element);
+        let indice = newArray.findIndex((element)=>element.id === id)
+        let elementFound = newArray[indice] ;
+        elementFound.checked = !elementFound.checked;
+        newArray.splice(indice,1,elementFound)
+        setItems(newArray);
+    }
+
+    const updateItem =(id,newName,newPrice,newQuantity)=>{
+        let newArray = items.map((element)=>element);
+        let indice = newArray.findIndex((element)=>element.id === id)
+        let elementFound = newArray[indice] ;
+        elementFound.name = newName;
+        elementFound.price = newPrice;
+        elementFound.quantity = newQuantity;
+        newArray.splice(indice,1,elementFound)
+        setItems(newArray)
+        saveList();
+       
+    }
     const saveList =()=>{
         
         localStorage.setItem("list",JSON.stringify(items));
@@ -32,7 +53,7 @@ export function AdminItems() {
        
     }
 
-    
+    console.log(items)
 
     return (
         <>
@@ -44,7 +65,7 @@ export function AdminItems() {
 
             </div>
             <div id="body">
-                <Category items={items} delete={deleteItem} />
+                <Category items={items} delete={deleteItem} update={updateItem} check={checkItem} />
 
             </div>
 

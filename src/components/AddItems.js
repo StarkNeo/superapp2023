@@ -12,6 +12,7 @@ export function Item(props) {
 
 
 
+
     const changeValue = ({ target }) => {
         switch (target.id) {
             case 'category':
@@ -46,6 +47,7 @@ export function Item(props) {
             price: price,
             quantity: quantity,
             unit: unit,
+            checked: false,
         }
         props.addItem(item)
         setCategory('')

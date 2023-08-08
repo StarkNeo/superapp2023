@@ -11,11 +11,14 @@ export function Products(props) {
         {
            props.items.map((item) => (
            <Product key={item.id} 
-           id={item.id} 
+           id={item.id}
            value={item.name} 
            price={item.price} 
-           quantity={item.quantity} 
+           quantity={item.quantity}
+           checkbox ={item.checked} 
            delete={props.delete}
+           update={props.update}
+           check={props.check}
            
            />
            ))

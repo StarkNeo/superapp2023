@@ -18,48 +18,53 @@ export function Category(props) {
         setCategory(categories)
 
     }, [props.items]);
-    const getItemsByCategory =(category)=>{
+    const getItemsByCategory = (category) => {
         let total = 0;
-        props.items.map((e)=>{
+        props.items.map((e) => {
             if (e.category === category) {
-                total+=(e.price * e.quantity);
+                if (e.checked === true) {
+                    total += (e.price * e.quantity);
+                }
+
             }
-            
+
         })
         return total;
     }
     return (
-        <div>
+        <div className="category">
             {category.map((cat, index) => (
 
                 <>
-                    
-                    
-                    <table>
+                    <table className="body-category">
                         <thead>
-                            <tr>
+                            <tr className="head-category">
                                 <th colSpan={3}><h2 key={index}>{cat}</h2></th>
                                 <th colSpan={2} className="money">${getItemsByCategory(cat)}</th>
                             </tr>
-                            <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th colSpan={2}>Subtotal</th>
+                            <tr className="head-names">
+                                <th>Actions</th>
+                                <th>Nombre</th>
+                                <th> Precio</th>
+                                <th>Cantidad</th>
+                                <th>subtotal</th>
                             </tr>
                         </thead>
-                        
-                        {props.items.map((e, index) => {
-                            let arrayItems = [];
-                            if (e.category === cat) {
-                                arrayItems.push(e);
-                                
-                            }
-                            
-                            return <Products key={index} items={arrayItems} delete={props.delete} />
-                        })}
-                        
-                        
+
+                        <tbody>
+
+
+                            {props.items.map((e, index) => {
+                                let arrayItems = [];
+                                if (e.category === cat) {
+                                    arrayItems.push(e);
+
+                                }
+
+                                return <Products id={index} items={arrayItems} delete={props.delete} update={props.update} check={props.check} />
+                            })}
+
+                        </tbody>
                     </table>
 
 

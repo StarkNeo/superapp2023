@@ -1,28 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Paytone+One&display=swap');
+
+/*
+font-family: 'Amatic SC', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Titillium Web', sans-serif;
+font-family: 'Teko', sans-serif;
+font-family: 'Abril Fatface', cursive;
+
+*/
+
 #headApp {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1f 1fr 1fr;
-  max-width: 49rem;
-  max-height: 49rem;
-  margin-left: 25%;
+  /*max-width: 49rem;
+  max-height: 49rem;*/
+  width: 90%;
+  margin: auto;
   box-shadow: inset 0 0 10px #282c34;
   position: sticky;
   top: 10px;
   background-color: white;
   z-index: 10;
-  
+  font-family: 'Titillium Web', sans-serif;
+
 }
 
-.app-title{
+.app-title {
   grid-column-start: 1;
   grid-column-end: 3;
   justify-self: center;
 }
+
 #body {
-  max-width: 49rem;
-  max-height: 49rem;
-  margin-left: 25%;
-  margin-top: 5%;
+  /*max-width: 49rem;
+  max-height: 49rem;*/
+  display: flex;
+  width: 100%;
+  /*margin-left: 25%;*/
+
+  margin: 2rem auto;
 
 }
 
@@ -33,6 +54,7 @@
 
 form {
   width: 80%;
+  font-size: 12px;
   margin: auto;
   /*border: 1px solid black;*/
   display: flex;
@@ -51,24 +73,26 @@ input[type="submit"] {
   text-align: center;
 }
 
-#summTotal{
+#summTotal {
   text-align: center;
   width: 4rem;
 }
 
 
 
-fieldset{
+fieldset {
   border: none;
-  
+
 }
 
-fieldset input{
+fieldset input {
   font-size: 10px;
   margin-left: 1.5rem;
   width: 3.5rem;
   text-align: center;
 }
+
+/*clase .input pertenece a los inputs del formulario para agregar items */
 .input {
   width: 100%;
   display: flex;
@@ -85,35 +109,111 @@ fieldset input{
 
 }
 
+/*se refiere a los inputs renderizados en la tabla que muestra los productos de cada categoria */
 input {
   text-transform: uppercase;
+
 }
 
-table {
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  font-size: 12px;
+  margin: auto;
+
+}
+
+.body-category {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
   font-family: Arial, Helvetica, sans-serif;
   color: #111111;
-  border: 1px solid black;
+  border-radius: 20px;
+  width: 98%;
+  margin: auto;
+}
+
+.head-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
-  margin: 1rem auto;
-  border-radius: 10px;
   
+}
+
+.item-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[name="value"] {
+  width: 100%;
+  background: none;
+  border: none;
+}
+
+input[name="price"],
+input[name="quantity"] {
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: none;
+  
+}
+
+thead {
+  display: flex;
+  flex-direction: column;
 
 }
 
-th,
+thead .head-category th{
+  color: #111111;
+}
+.head-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+
+
+input:hover {
+  background-color: burlywood;
+  color: black;
+
+}
+
+
+
+input[type="button"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
 td {
-  padding: 7px 10px 10px 10px;
-  text-align: center;
-  text-transform: uppercase;
-
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: auto;
 }
 
-th {
-  letter-spacing: 0.1em;
-  font-size: 90%;
-  /*border-bottom: 2px solid #111111;*/
-  /*border-top: 1px solid #999;*/
-  text-align: center;
+tr {
+  display: flex;
+  border: 1px solid white;
 }
 
 tr:nth-child(even) {
@@ -124,69 +224,156 @@ tr:hover {
   background-color: #c3e6e5;
 }
 
-.money {
-  text-align: right;
+output {
+  width: 5%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-@media only screen and (max-width:513px){
-  #headApp{
-    font-size: 12px;
-  }
+th {
+  padding: 7px 10px 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
 
-  #summarize{
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-  }
-
+.head-names th:nth-child(1){
+  background-color:blue;
+  width: 10%;
   
-  #body{
-    
-    max-width: 75%;
-  }
-  table{
-    max-width: 70%;
-    font-size: 12px;
-  }
 }
-@media only screen and (max-width:368px){
-  #headApp{
-    font-size: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  form{
-
-    display: flex;
-  }
-  #summarize{
-    display: flex;
-    justify-content: center;
-  }
-  fieldset{
-    display: flex;
-    width: 95%;
-    flex-direction: column;
-  }
-
-  fieldset input{
-    margin: 0px;
-    width: 3rem;
-    align-self: center;
-
-  }
-  table{
-    max-width: 65%;
-    font-size: 9px;
-  }  
+.head-names th:nth-child(2){
+  background-color:blue;
+  width: 75%;
+  
 }
-@media only screen and (max-width:354px){
-  table{
-    min-width: 65%;
-    font-size: 9px;
+.head-names th:nth-child(3){
+  background-color:blue;
+  width: 5%;
+}
+.head-names th:nth-child(4){
+  background-color:blue;
+  width: 5%;
+}
+.head-names th:nth-child(5){
+  background-color:blue;
+  width: 5%;
+}
+
+.item-line td:nth-child(1){
+  width: 10%;
+  
+}
+.item-line td:nth-child(2){
+  width: 55%;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  
+}
+.item-line td:nth-child(3){
+  width: 10%;
+  font-size: 12px;
+  
+}
+.item-line td:nth-child(4){
+  width: 5%;
+  
+}
+.item-line td:nth-child(5){
+  width: 5%;
+  
+}
+
+@media only screen and (max-width:585px){
+  .body-category input{
+    font-size: 10px;
+    font-weight: bold;
   }
-  #headApp{
-    min-width: 16rem;
+ thead{
+  font-size: 8px;
+ }
+
+.item-line td{
+  width: auto;
+}
+
+.item-line td:nth-child(2){
+  width: 55%;
+  justify-content: flex-start;
+  margin-left: 0;
+  
+}
+.head-names th:nth-child(2){
+  background-color:blue;
+  width: 55%;
+}
+output{
+  font-size: 10px;
+}
+}
+
+@media only screen and (max-width:470px) {
+  .body-category input{
+    font-size: 10px;
   }
+ thead{
+  font-size: 7px;
+ }
+ .head-names th:nth-child(1){
+  background-color:blue;
+  width: 12%;
+}
+.head-names th:nth-child(3){
+  background-color:blue;
+  width: 5%;
+}
+.head-names th:nth-child(4){
+  background-color:blue;
+  width: 5%;
+}
+.head-names th:nth-child(5){
+  background-color:blue;
+  width: 5%;
+  
+}
+
+.item-line td:first-child{
+  width: auto;
+  margin-left: 0;
+}
+
+#headApp{
+  width: 100%;
+}
+
+.category {
+  width: 100%;
+  
+}
+
+.item-line td:nth-child(2){
+  width: 50%;
+  justify-content: flex-start;
+  margin-left: 1.2rem;
+  
+}
+
+form {
+  width: 90%;
+  font-size: 9px;
+  
+}
+#summarize{
+  width: 90%;
+}
+#summarize h2, h5{
+  display: none;
+  
+}
+
+
 }
