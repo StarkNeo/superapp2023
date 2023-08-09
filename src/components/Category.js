@@ -40,12 +40,12 @@ export function Category(props) {
                         <thead>
                             <tr className="head-category">
                                 <th colSpan={3}><h2 key={index}>{cat}</h2></th>
-                                <th colSpan={2} className="money">${getItemsByCategory(cat)}</th>
+                                <th colSpan={2} className="money">${getItemsByCategory(cat).toFixed(1)}</th>
                             </tr>
                             <tr className="head-names">
                                 <th>Actions</th>
                                 <th>Nombre</th>
-                                <th> Precio</th>
+                                <th>Precio</th>
                                 <th>Cantidad</th>
                                 <th>subtotal</th>
                             </tr>

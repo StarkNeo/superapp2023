@@ -62,7 +62,7 @@ export function Product(props) {
             <td className="td-qty"><input  type="number" name="quantity" id={props.id} value={quantity} onInput={handleChange} placeholder="quantity" /></td>
 
 
-            <td><output>{price * quantity}</output></td>
+            <td><output>{(price * quantity).toFixed(1)}</output></td>
 
 
         </tr>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Item } from "./AddItems";
 import { Category } from "./Category";
 import { Summarize } from "./Summary";
+import { Navigation } from "./Navigation";
 
 export function AdminItems() {
     const [items, setItems] = useState([]);
@@ -57,11 +58,12 @@ export function AdminItems() {
 
     return (
         <>
-
+            <h1 className="app-title">SUPERAPP 2023</h1>
+                
             <div id="headApp">
-                <h1 className="app-title">SUPERAPP 2023</h1>
-                <Item addItem={addItem} />
-                <Summarize values={items} save={saveList} delete={deleteList} load={loadList}/>
+                <Navigation addItem={addItem} save={saveList} delete={deleteList} load={loadList}  />
+                {/*<Item addItem={addItem} />*/}
+                <Summarize values={items} />
 
             </div>
             <div id="body">

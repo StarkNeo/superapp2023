@@ -18,21 +18,11 @@ export function Summarize(props) {
     }, [props.values])
 
     return (
-        <>
-            <figure id="summarize">
-                <figcaption>SUMMARY</figcaption>
-                
-                <label>TOTAL : </label>
-                <input id="summTotal" value={total} disabled />
-                <fieldset>
-                    <h5>List Actions</h5>
-                    <input type="button" value="Save" onClick={props.save} />
-                    <input type="button" value="Remove" onClick={props.delete} />
-                    <input type="button" value="My list" onClick={props.load} />
-                </fieldset>
-            </figure>
+        <figure id="summarize">
+            <label>TOTAL $: </label>
+            <input id="summTotal" value={total.toFixed(1)} disabled />
 
+        </figure>
 
-        </>
     )
 }

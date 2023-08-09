@@ -12,10 +12,25 @@ font-family: 'Teko', sans-serif;
 font-family: 'Abril Fatface', cursive;
 
 */
+#navigation{
+  display: flex;
+  width: 80%;
+  margin:0.5rem auto;
+  justify-content: space-between;
+  
+}
+#navigation input{
+  width: auto;
+  font-size: 10px;
+}
 
+.money{
+  font-size: 0.8rem;
+}
 #headApp {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  /*grid-template-columns: 1fr 1fr;
   grid-template-rows: 1f 1fr 1fr;
   /*max-width: 49rem;
   max-height: 49rem;*/
@@ -31,9 +46,7 @@ font-family: 'Abril Fatface', cursive;
 }
 
 .app-title {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  justify-self: center;
+  text-align: center;
 }
 
 #body {
@@ -76,6 +89,7 @@ input[type="submit"] {
 #summTotal {
   text-align: center;
   width: 4rem;
+  font-weight: bold;
 }
 
 
@@ -201,9 +215,6 @@ input[type="checkbox"] {
 
 
 
-
-
-
 td {
   display: flex;
   justify-content: center;
@@ -285,7 +296,7 @@ th {
 }
 .item-line td:nth-child(5){
   width: 5%;
-  
+  justify-content: flex-start;
 }
 
 @media only screen and (max-width:585px){
@@ -314,6 +325,10 @@ th {
 output{
   font-size: 10px;
 }
+
+.head-names{
+  font-size: 7px;
+}
 }
 
 @media only screen and (max-width:470px) {
@@ -325,7 +340,11 @@ output{
  }
  .head-names th:nth-child(1){
   background-color:blue;
-  width: 12%;
+  width: 16%;
+}
+.head-names th:nth-child(2){
+  background-color:blue;
+  width: 50%;
 }
 .head-names th:nth-child(3){
   background-color:blue;
@@ -361,6 +380,24 @@ output{
   margin-left: 1.2rem;
   
 }
+.item-line td:nth-child(3){
+  width: 5%;
+  justify-content: flex-start;
+  margin-left: 1.2rem;
+  
+}
+.item-line td:nth-child(4){
+  width: 5%;
+  justify-content: flex-start;
+  margin-left: 1.2rem;
+  
+}
+.item-line td:nth-child(5){
+  width: 5%;
+  justify-content: flex-start;
+  margin-left: 1.2rem;
+  
+}
 
 form {
   width: 90%;
@@ -376,4 +413,24 @@ form {
 }
 
 
+}
+
+@media only screen and (max-width:431px){
+  .item-line td:nth-child(2){
+    width: 45%;
+    justify-content: flex-start;
+    margin-left: 0.5rem;
+    
+  } 
+}
+@media only screen and (max-width:335px){
+  .item-line td:nth-child(2){
+    width: 35%;
+    justify-content: flex-start;
+    margin-left: 0.4rem;
+    
+  }
+  .head-names{
+    font-size: 6px;
+  } 
 }
